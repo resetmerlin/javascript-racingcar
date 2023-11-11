@@ -17,41 +17,43 @@
               예시) EAST, WEST, SOUTH, NORTH
             </p>
           </section>
-          <section id="car-names-container">
+          <form id="name__form">
             <div class="d-flex">
               <input
-                id="car-names-input"
+                id="carName"
                 type="text"
+                name="carName"
                 class="w-100 mr-2"
                 placeholder="자동차 이름"
               />
               <button
                 id="car-names-check-button"
-                type="button"
+                type="submit"
                 class="btn btn-cyan"
               >
                 확인
               </button>
             </div>
-          </section>
-          <section id="try-count-container" class="mt-5">
+          </form>
+          <form id="count__form" class="mt-5">
             <p>시도할 횟수를 입력해주세요.</p>
             <div class="d-flex">
               <input
-                id="try-count-input"
+                id="countToGo"
                 type="number"
+                name="countToGo"
                 class="w-100 mr-2"
                 placeholder="시도 횟수"
               />
               <button
                 id="try-count-check-button"
-                type="button"
+                type="submit"
                 class="btn btn-cyan"
               >
                 확인
               </button>
             </div>
-          </section>
+          </form>
         </div>
       </div>
       <div class="d-flex justify-center mt-5">
@@ -70,6 +72,6 @@
         </section>
       </div>
     </div>
-    <script src="src/js/index.js" type="module"></script>
+    <script src="src/index.js" type="module"></script>
   </body>
 </html>
