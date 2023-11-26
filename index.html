@@ -5,7 +5,6 @@
     <title>🏎️ 자동차 경주 게임</title>
     <link rel="stylesheet" href="./src/css/index.css" />
   </head>
-
   <body>
     <div id="app">
       <div class="d-flex justify-center mt-5">
@@ -17,61 +16,51 @@
               예시) EAST, WEST, SOUTH, NORTH
             </p>
           </section>
-          <form id="name__form">
+          <section>
             <div class="d-flex">
               <input
-                id="carName"
                 type="text"
-                name="carName"
-                class="w-100 mr-2"
+                id="carName"
+                class="w-100 mr-2 car-name"
                 placeholder="자동차 이름"
               />
-              <button
-                id="car-names-check-button"
-                type="submit"
-                class="btn btn-cyan"
-              >
+              <button type="button" class="btn btn-cyan car-name-btn">
                 확인
               </button>
             </div>
-          </form>
-          <form id="count__form" class="mt-5">
+          </section>
+          <section class="mt-5" hidden id="try-count-form">
             <p>시도할 횟수를 입력해주세요.</p>
             <div class="d-flex">
               <input
-                id="countToGo"
+                id="countTried"
                 type="number"
-                name="countToGo"
-                class="w-100 mr-2"
+                class="w-100 mr-2 try-count"
                 placeholder="시도 횟수"
               />
-              <button
-                id="try-count-check-button"
-                type="submit"
-                class="btn btn-cyan"
-              >
+              <button type="button" class="btn btn-cyan try-count-btn">
                 확인
               </button>
             </div>
-          </form>
+          </section>
         </div>
       </div>
       <div class="d-flex justify-center mt-5">
-        <section id="game-progress-container" class="mt-4">
-          <div class="d-flex"></div>
+        <section id="game-process-section" class="mt-4" hidden>
+          <div id="game-process-screen" class="d-flex"></div>
         </section>
       </div>
       <div class="d-flex justify-center mt-5">
-        <section id="game-result-container">
-          <h2>🏆 최종 우승자: EAST, WEST 🏆</h2>
+        <section id="game-result-section" hidden>
+          <h2 id="game-result-text"></h2>
           <div class="d-flex justify-center">
-            <button id="reset-button" type="button" class="btn btn-cyan">
+            <button id="game-restart-button" type="button" class="btn btn-cyan">
               다시 시작하기
             </button>
           </div>
         </section>
       </div>
     </div>
-    <script src="src/index.js" type="module"></script>
+    <script type="module" src="src/js/index.js"></script>
   </body>
 </html>
