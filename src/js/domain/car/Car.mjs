@@ -1,9 +1,6 @@
-import { CarTemplate } from '../../components/index.mjs';
-import { Forward } from '../index.mjs';
-
-class Car extends Forward {
+import { CarTemplate, ForwardIcon } from '../../components/index.mjs';
+class Car {
   constructor(count, raceLength, name) {
-    super();
     this._count = count;
     this._raceLength = raceLength;
     this._name = name;
@@ -25,7 +22,10 @@ class Car extends Forward {
 
       document.getElementById(this._name).insertAdjacentHTML(
         'afterEnd',
-        new Array(this._raceLength).fill(0).map(x => super._render()),
+        new Array(this._raceLength)
+          .fill(0)
+          .map(x => ForwardIcon())
+          .join(''),
       );
     }
   }
