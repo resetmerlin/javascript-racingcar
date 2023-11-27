@@ -35,12 +35,13 @@ class Game {
 
   gameStart() {
     showElement(document.getElementById('game-process-section'));
+
     this.renderCars();
+
     this.raceCars();
+
     const winner = this.getWinner();
     showElement(document.getElementById('game-result-section'));
-
-    console.log(winner);
 
     // Show winner's name
     document.getElementById('game-result-text').innerHTML = winner;
