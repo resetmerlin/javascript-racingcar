@@ -1,4 +1,4 @@
-import { Game } from './controllers/index.mjs';
+import { Game } from './domain/index.mjs';
 
 const game = new Game();
 
