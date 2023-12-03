@@ -1,21 +1,34 @@
 import { showElement } from '../../utils/elements.js';
 import { Car } from '../index.mjs';
 
+/** Game Domain
+ *
+ *  1. Responsible for rendering mutiple cars
+ *  2. Responsible for letting multiple cars to race
+ *  3. Responsible for get a winner car
+ *  4. Responsible for making car instances based on the name input
+ *  5. Responsible for setting count, parking, raceLength for game start
+ *  6. Responsible for adding events
+ *
+ */
 class Game {
   parking = [];
   raceLength = 0;
   count = 0;
 
+  /** Render each cars on parking array */
   renderCars() {
     this.parking.forEach(car => car._render());
   }
 
+  /** race car to each count */
   raceCars() {
     for (let i = 0; i < this.count; i++) {
       this.parking.forEach(car => car.race());
     }
   }
 
+  /** Get winner car */
   getWinner() {
     // Get a longest race length
     let str = '';
@@ -33,6 +46,7 @@ class Game {
     return str;
   }
 
+  /** Start game */
   gameStart() {
     showElement(document.getElementById('game-process-section'));
 
@@ -47,6 +61,7 @@ class Game {
     document.getElementById('game-result-text').innerHTML = winner;
   }
 
+  /** Put name inputs on parking array */
   putNamesOnParking() {
     const $carNames = document.getElementById('carName').value;
     const carNameLists = $carNames.split(',');
@@ -62,6 +77,7 @@ class Game {
     this.raceLength = 0;
   }
 
+  /** Make Car instance and put into parking array */
   putToParking() {
     this.resetParking();
     this.putNamesOnParking();
@@ -73,6 +89,7 @@ class Game {
     showElement(document.getElementById('try-count-form'));
   }
 
+  /** Set count for race */
   setCountToStart() {
     const $countTried = document.getElementById('countTried').value;
     this.count = $countTried;
